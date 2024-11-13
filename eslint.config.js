@@ -12,7 +12,7 @@ export default [
             'no-unused-vars': 'warn',
             'no-undef': 'error',
             'react/react-in-jsx-scope': 'off',
-            'no-console': 'warn',
+            'no-console': ['warn', { allow: ['warn', 'error'] }],
         },
     },
     pluginJs.configs.recommended,
