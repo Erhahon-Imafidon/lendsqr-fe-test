@@ -9,3 +9,24 @@ $light-red: #FF3366;
 $blacklist: #E4033B;
 $active: #39CD62;
 $pending: #E9B200;
+
+
+//font mixins
+//to target class
+@mixin work-sans($uniquifier, $weight) {
+  .work-sans-#{$uniquifier} {
+    font-family: "Work Sans", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: $weight;
+    font-style: normal;
+  }
+}
+
+@mixin work-sans($selector, $weight) {
+  #{$selector} {
+    font-family: "Work Sans", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: $weight;
+    font-style: normal;
+  }
+}
