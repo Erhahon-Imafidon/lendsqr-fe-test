@@ -1,7 +1,7 @@
 const App = () => {
     return (
         <div>
-            <p className={''}>Text fonts</p>
+            <p className={'text-primary'}>Text fonts</p>
         </div>
     );
 };

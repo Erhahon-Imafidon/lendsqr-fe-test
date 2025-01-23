@@ -1,4 +1,4 @@
-$primary-color: #213F7D;
+$primary: #213F7D;
 $lime-green: #39CDCC;
 $dark-blue: #545F7D;
 $light-pink: #DF18FF;
@@ -9,4 +9,18 @@ $light-red: #FF3366;
 $blacklist: #E4033B;
 $active: #39CD62;
 $pending: #E9B200;
+
+//color palette
+$colors: (
+  'primary': $primary,
+  'lime-green': $lime-green,
+  'dark-blue': $dark-blue,
+  'light-pink': $light-pink,
+  'deep-purple': $deep-purple,
+  'orange': $orange,
+  'light-red': $light-red,
+  'blacklist': $blacklist,
+  'active': $active,
+  'pending': $pending,
+);
 
