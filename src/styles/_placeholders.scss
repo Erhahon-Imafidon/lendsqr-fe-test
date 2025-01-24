@@ -1,1 +1,43 @@
+// Import the font files
+@font-face {
+  font-family: 'Avenir';
+  src: url('../assets/fonts/AvenirNextLTPro-Regular.otf') format('opentype');
+  font-weight: normal;
+  font-style: normal;
+}
 
+@font-face {
+  font-family: 'Avenir';
+  src: url('../assets/fonts/AvenirNextLTPro-Bold.otf') format('opentype');
+  font-weight: bold;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Avenir';
+  src: url('../assets/fonts/AvenirNextLTPro-MediumCn.otf') format('opentype');
+  font-weight: 500;
+  font-style: normal;
+}
+
+
+
+// Fonts
+%avenirFont {
+  font-family: 'Avenir', sans-serif;
+}
+
+%avenirFontRegular {
+  @extend %avenirFont;
+  font-weight: normal;
+}
+
+%avenirFontMedium {
+  @extend %avenirFont;
+  font-weight: 500;
+}
+
+%avenirFontBold {
+  @extend %avenirFont;
+  font-weight: bold;
+}
