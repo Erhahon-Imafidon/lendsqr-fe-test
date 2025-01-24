@@ -1,29 +1,30 @@
-$primary: #213F7D;
-$lime-green: #39CDCC;
-$dark-blue: #545F7D;
-$light-pink: #DF18FF;
-$deep-purple: #5718FF;
-$orange: #F55F44;
-$light-red: #FF3366;
+$primary: #213f7d;
+$secondary: rgba(84, 95, 125, 0.15);
+$lime-green: #39cdcc;
+$dark-blue: #545f7d;
+$light-pink: #df18ff;
+$deep-purple: #5718ff;
+$orange: #f55f44;
+$light-red: #ff3366;
 
-$blacklist: #E4033B;
-$active: #39CD62;
-$pending: #E9B200;
+$blacklist: #e4033b;
+$active: #39cd62;
+$pending: #e9b200;
 
 //color palette
 $colors: (
-  'primary': $primary,
-  'lime-green': $lime-green,
-  'dark-blue': $dark-blue,
-  'light-pink': $light-pink,
-  'deep-purple': $deep-purple,
-  'orange': $orange,
-  'light-red': $light-red,
-  'blacklist': $blacklist,
-  'active': $active,
-  'pending': $pending,
+    'primary': $primary,
+    'secondary': $secondary,
+    'lime-green': $lime-green,
+    'dark-blue': $dark-blue,
+    'light-pink': $light-pink,
+    'deep-purple': $deep-purple,
+    'orange': $orange,
+    'light-red': $light-red,
+    'blacklist': $blacklist,
+    'active': $active,
+    'pending': $pending,
 );
-
 
 // spacing
 $base-padding: 0.75rem;
@@ -32,7 +33,6 @@ $base-margin: 0.75rem;
 // borders
 $base-border-thickness: 1px;
 $base-border-radius: 20px;
-
 
 // font-size
 $base-font-size: 1rem;
