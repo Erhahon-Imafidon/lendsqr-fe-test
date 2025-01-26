@@ -8,10 +8,12 @@ const Login = () => {
             <section className="image bg-secondary">
                 <img src={Logo} alt="logo" className="logoImg" />
 
-                <div></div>
+                <div className="welImg">
+                    <img src={SignIn} alt="Sign image" />
+                </div>
             </section>
 
-            <section className="welcome bg-white"></section>
+            <section className="welcome bg-white">Welcome</section>
         </div>
     );
 };
