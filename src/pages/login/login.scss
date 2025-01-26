@@ -8,13 +8,14 @@
     .image {
         display: flex;
         flex-direction: column;
-        align-items: center;
+        //align-items: center;
         justify-content: center;
         width: 100%;
         height: 100%;
+        padding: 0 pxToRem(150px);
 
-        img {
-            width: pxToRem(100px);
+        .logoImg {
+            width: pxToRem(170px);
         }
     }
 
@@ -22,7 +23,9 @@
         width: 100%;
         height: 100%;
         display: flex;
-        align-items: center;
+        flex-direction: column;
         justify-content: center;
+        padding: 0 pxToRem(150px);
+
     }
 }
