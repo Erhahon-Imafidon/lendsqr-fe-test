@@ -1,7 +1,8 @@
-import { useState } from 'react';
+import React, { useState } from 'react';
+import { Link } from 'react-router';
 import Logo from '../../assets/images/logo.png';
 import SignIn from '../../assets/images/sign-in.png';
-import { Header, AppInput } from '../../components/index.ts';
+import { Header, AppInput, FormButton } from '../../components/index.ts';
 import './login.scss';
 
 const Login = () => {
@@ -9,6 +10,10 @@ const Login = () => {
 
     const handleShowPwd = () => {
         setShowPwd(!showPwd);
+    };
+
+    const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
+        e.preventDefault();
     };
 
     return (
@@ -27,7 +32,7 @@ const Login = () => {
                     subTitle={'Enter details to login.'}
                 />
 
-                <form>
+                <form onSubmit={handleSubmit}>
                     <AppInput placeholder="Email" />
 
                     <AppInput
@@ -36,6 +41,12 @@ const Login = () => {
                         isShown={true}
                         onClick={handleShowPwd}
                     />
+
+                    <Link to="#" className="text-lime-green font-md">
+                        Forgot PASSWORD?
+                    </Link>
+
+                    <FormButton text="Log in" onClick={() => {}} />
                 </form>
             </section>
         </div>

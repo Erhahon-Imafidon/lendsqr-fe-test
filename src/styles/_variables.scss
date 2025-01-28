@@ -6,10 +6,13 @@ $light-pink: #df18ff;
 $deep-purple: #5718ff;
 $orange: #f55f44;
 $light-red: #ff3366;
+$white: #ffffff;
+$black: #000000;
 
 $blacklist: #e4033b;
 $active: #39cd62;
 $pending: #e9b200;
+
 
 //color palette
 $colors: (
@@ -24,6 +27,8 @@ $colors: (
     'blacklist': $blacklist,
     'active': $active,
     'pending': $pending,
+    'white': $white,
+    'black': $black,
 );
 
 // spacing
