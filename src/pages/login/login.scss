@@ -8,11 +8,9 @@
     .image {
         display: flex;
         flex-direction: column;
-        justify-content: center;
-        //gap: 50px;
         width: 100%;
         height: 100%;
-        padding: 0 pxToRem(150px);
+        padding: 100px pxToRem(150px);
 
         .logoImg {
             width: pxToRem(170px);

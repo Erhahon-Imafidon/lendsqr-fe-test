@@ -1,3 +1,21 @@
-.header{
+@use '../../styles/variables' as *;
+@use '../../styles/placeholders' as *;
+@use '../../styles/functions' as *;
 
+.header {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+
+  h1 {
+   @extend %avenirFontBold;
+    font-size: pxToRem(40px);
+    color: $primary;
+  }
+
+  h4 {
+    @extend %avenirFontRegular;
+    font-size: pxToRem(20px);
+    color: $dark-blue;
+  }
 }
