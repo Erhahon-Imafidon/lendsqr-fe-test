@@ -1,3 +1,4 @@
+import React from 'react';
 import './appInput.scss';
 
 interface AppInputProp extends React.InputHTMLAttributes<HTMLInputElement> {
