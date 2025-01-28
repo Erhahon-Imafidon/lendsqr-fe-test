@@ -1,7 +1,7 @@
 import './login.scss';
 import Logo from '../../assets/images/logo.png';
 import SignIn from '../../assets/images/sign-in.png';
-import { Header } from '../../components/index.ts';
+import { Header, AppInput } from '../../components/index.ts';
 
 const Login = () => {
     return (
@@ -19,6 +19,16 @@ const Login = () => {
                     title={'Welcome!'}
                     subTitle={'Enter details to login.'}
                 />
+
+                <form>
+                    <AppInput placeholder="Email" />
+
+                    <AppInput
+                        placeholder="Password"
+                        type="password"
+                        isShown={true}
+                    />
+                </form>
             </section>
         </div>
     );

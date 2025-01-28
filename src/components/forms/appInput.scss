@@ -1,0 +1,20 @@
+@use '../../styles/functions' as *;
+@use '../../styles/variables' as *;
+
+.appInput {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    padding: 20px 10px;
+
+    input {
+      outline: none;
+      border: none;
+    }
+
+
+  .btn {
+
+  }
+}
