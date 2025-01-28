@@ -1,5 +1,6 @@
 @use '../../styles/functions' as *;
 @use '../../styles/variables' as *;
+@use '../../styles/placeholders' as *;
 
 .appInput {
     display: flex;
@@ -7,8 +8,13 @@
     align-items: center;
     width: 100%;
     padding: 20px 10px;
+    border: 2px solid $secondary;
+    border-radius: 5px;
+
 
     input {
+      @extend %avenirFontRegular;
+      font-size: pxToRem(14px);
       outline: none;
       border: none;
     }

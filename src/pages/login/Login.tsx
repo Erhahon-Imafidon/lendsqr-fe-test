@@ -6,7 +6,7 @@ import { Header, AppInput } from '../../components/index.ts';
 const Login = () => {
     return (
         <div className="login">
-            <section className="image bg-secondary">
+            <section className="image bg-secondary-light-5">
                 <img src={Logo} alt="logo" className="logoImg" />
 
                 <div className="welImg">
