@@ -3,14 +3,24 @@ import './appInput.scss';
 interface AppInputProp extends React.InputHTMLAttributes<HTMLInputElement> {
     className?: string;
     isShown?: boolean;
+    onClick?: () => void;
 }
 
-const AppInput = ({ isShown, className = '', ...otherProps }: AppInputProp) => {
+const AppInput = ({
+    isShown,
+    onClick,
+    className = '',
+    ...otherProps
+}: AppInputProp) => {
     return (
         <div className={`appInput ${className}`}>
             <input {...otherProps} />
 
-            {isShown && <button className="btn">SHOW</button>}
+            {isShown && (
+                <button type="button" className="btn font-xs" onClick={onClick}>
+                    SHOW
+                </button>
+            )}
         </div>
     );
 };

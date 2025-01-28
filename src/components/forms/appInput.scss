@@ -7,20 +7,32 @@
     justify-content: space-between;
     align-items: center;
     width: 100%;
-    padding: 20px 10px;
+    padding: 20px 15px;
     border: 2px solid $secondary;
     border-radius: 5px;
+    box-shadow: 0 15px 90px 0 rgba(0, 0, 0, 0.03);
 
 
     input {
       @extend %avenirFontRegular;
-      font-size: pxToRem(14px);
+      font-size: $base-font-size;
       outline: none;
       border: none;
+      width: 100%;
+
+      &::placeholder {
+        color: $dark-blue;
+        font-size: pxToRem(14px);
+      }
     }
 
 
   .btn {
-
+   @extend %avenirFontMedium;
+    color: $lime-green;
+    border: none;
+    background-color: transparent;
+    cursor: pointer;
+    letter-spacing: 3px;
   }
 }
