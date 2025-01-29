@@ -1,19 +1,27 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 import { Link } from 'react-router';
+import { Formik } from 'formik';
+import * as Yup from 'yup';
 import Logo from '../../assets/images/logo.png';
 import SignIn from '../../assets/images/sign-in.png';
-import { Header, AppInput, FormButton } from '../../components/index.ts';
+import {
+    Header,
+    AppInput,
+    FormButton,
+    ErrorMessage,
+} from '../../components/index.ts';
 import './login.scss';
+
+const validationSchema = Yup.object().shape({
+    email: Yup.string().email('Invalid email').required('Required'),
+    pwd: Yup.string().required('Required'),
+});
 
 const Login = () => {
     const [showPwd, setShowPwd] = useState(false);
 
     const handleShowPwd = () => {
         setShowPwd(!showPwd);
-    };
-
-    const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
-        e.preventDefault();
     };
 
     return (
@@ -32,22 +40,62 @@ const Login = () => {
                     subTitle={'Enter details to login.'}
                 />
 
-                <form onSubmit={handleSubmit}>
-                    <AppInput placeholder="Email" />
+                <Formik
+                    initialValues={{ email: '', pwd: '' }}
+                    onSubmit={(values, { resetForm }) => {
+                        console.log(values);
+                        resetForm();
+                    }}
+                    validationSchema={validationSchema}
+                >
+                    {({
+                        values,
+                        errors,
+                        handleSubmit,
+                        handleChange,
+                        handleBlur,
+                        touched,
+                    }) => (
+                        <form onSubmit={handleSubmit}>
+                            <AppInput
+                                name="email"
+                                type="email"
+                                placeholder="Email"
+                                onChange={handleChange}
+                                value={values.email}
+                                onBlur={handleBlur}
+                            />
 
-                    <AppInput
-                        placeholder="Password"
-                        type={showPwd ? 'text' : 'password'}
-                        isShown={true}
-                        onClick={handleShowPwd}
-                    />
+                            <ErrorMessage
+                                error={errors.email || ''}
+                                visible={!!touched.email}
+                            />
 
-                    <Link to="#" className="text-lime-green font-md">
-                        Forgot PASSWORD?
-                    </Link>
+                            <AppInput
+                                name="pwd"
+                                type={showPwd ? 'text' : 'password'}
+                                placeholder="Password"
+                                isShown={true}
+                                onClick={handleShowPwd}
+                                value={values.pwd}
+                                onChange={handleChange}
+                                onBlur={handleBlur}
+                                autoComplete="off"
+                            />
 
-                    <FormButton text="Log in" onClick={() => {}} />
-                </form>
+                            <ErrorMessage
+                                error={errors.pwd || ''}
+                                visible={!!touched.pwd}
+                            />
+
+                            <Link to="#" className="text-lime-green font-md">
+                                Forgot PASSWORD?
+                            </Link>
+
+                            <FormButton text="Log in" />
+                        </form>
+                    )}
+                </Formik>
             </section>
         </div>
     );
