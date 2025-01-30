@@ -38,7 +38,7 @@
         display: flex;
         flex-direction: column;
         justify-content: center;
-        padding: 0 pxToRem(150px);
+        padding: 0 150px pxToRem(150px);
 
 
       form {
@@ -46,6 +46,7 @@
         flex-direction: column;
         gap: 30px;
         margin-top: 80px;
+
 
         a {
             @extend %avenirFontMedium;

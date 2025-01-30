@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { Link } from 'react-router';
+import { Link, useNavigate } from 'react-router';
 import { Formik } from 'formik';
 import * as Yup from 'yup';
 import Logo from '../../assets/images/logo.png';
@@ -13,12 +13,16 @@ import {
 import './login.scss';
 
 const validationSchema = Yup.object().shape({
-    email: Yup.string().email('Invalid email').required('Required'),
-    pwd: Yup.string().required('Required'),
+    email: Yup.string()
+        .email('Invalid email')
+        .required('this field is required'),
+    pwd: Yup.string().required('password is required'),
 });
 
 const Login = () => {
     const [showPwd, setShowPwd] = useState(false);
+
+    const navigate = useNavigate();
 
     const handleShowPwd = () => {
         setShowPwd(!showPwd);
@@ -42,8 +46,13 @@ const Login = () => {
 
                 <Formik
                     initialValues={{ email: '', pwd: '' }}
-                    onSubmit={(values, { resetForm }) => {
-                        console.log(values);
+                    onSubmit={(_, { resetForm }) => {
+                        // Navigate to the dashboard and replace the current route
+                        document.startViewTransition(() => {
+                            navigate('/dashboard', { replace: true });
+                        });
+
+                        // Reset the form fields
                         resetForm();
                     }}
                     validationSchema={validationSchema}
